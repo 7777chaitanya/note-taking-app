@@ -1,4 +1,11 @@
 import App from "./App";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
+import { NotesProvider } from "./contexts/NotesContext";
 
-ReactDOM.render(<App/>,document.getElementById("root"))
+ReactDOM.render(
+  <NotesProvider>
+    <App />
+  </NotesProvider>,
+
+  document.getElementById("root")
+);
