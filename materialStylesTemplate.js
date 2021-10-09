@@ -1,0 +1,11 @@
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+
+});
+
+export default useStyles;
+
+import useStyles from "./styles";
+
+const classes = useStyles();

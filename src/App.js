@@ -5,9 +5,10 @@ const App = () => {
     const {notes}=useContext(NotesContext);
     console.log("notes => ", notes)
     return (
-        <div>
-            app
-        </div>
+        <>
+        <LeftMenu/>
+        <Content/>
+        </>
     )
 }
 
