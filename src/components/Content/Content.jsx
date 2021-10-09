@@ -5,7 +5,7 @@ import useStyles from "./styles";
 const Content = () => {
     const classes = useStyles();
     return (
-        <div>
+        <div className={classes.rightBox}>
             content
         </div>
     )

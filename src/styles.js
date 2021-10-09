@@ -1,10 +1,13 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
-    leftBox:{
-        flex: 4
+    outerBox:{
+        display : "flex",
+        justifyContent : "center",
+        alignItems : "center"
     }
 });
 
 export default useStyles;
+
 

@@ -4,7 +4,7 @@ import useStyles from "./styles";
 
 const LeftMenu = () => {
   const classes = useStyles();
-  return <div>left</div>;
+  return <div className={classes.leftBox}>left</div>;
 };
 
 export default LeftMenu;
