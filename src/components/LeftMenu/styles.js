@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
     leftBox:{
-        flex: 3,
+        flex: 2,
         border : "1px solid green",
         height : "99vh",
         display : "flex",
