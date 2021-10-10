@@ -4,11 +4,14 @@ import TextEditor from "../TextEditor/TextEditor";
 import useStyles from "./styles";
 import { Box, Typography, List, ListItem, Divider } from "@material-ui/core";
 import EachNoteItem from "./EachNoteItem/EachNoteItem";
+import {useParams} from "react-router-dom";
 
-const Notes = () => {
+const Notes = (props) => {
   const classes = useStyles();
   const { notes } = useContext(NotesContext);
   console.log("notes => ", notes);
+  const params = useParams();
+//   console.log("params => ",params.roomId)
   return (
     <div className={classes.root}>
       <Box className={classes.notesList}>
@@ -24,7 +27,7 @@ const Notes = () => {
         
       </Box>
       <Box className={classes.editor}>
-        <TextEditor />
+        <TextEditor roomId={params?.roomId}/>
       </Box>
     </div>
   );

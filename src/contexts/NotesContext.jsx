@@ -11,9 +11,9 @@ export const NotesProvider = ({ children }) => {
   useEffect(() => {
     const q = query(collection(db, "notes"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const cities = [];
+      const notes = [];
       querySnapshot.forEach((doc) => {
-          notes.push(doc.data());
+          notes.push({...doc.data(),id : doc.id});
       });
       setNotes(notes);
     });

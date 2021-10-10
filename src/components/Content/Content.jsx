@@ -14,7 +14,8 @@ const Content = () => {
       <Router>
         <Switch>
           <Route path="/home" render={(props) => <Home />} />
-          <Route path="/notes" render={(props) => <Notes />} />
+
+          <Route path="/notes/:roomId" render={(props) => <Notes {...props}/>} />
           <Route path="/tags" render={(props) => <Tags />} />
           <Route path="/trash" render={(props) => <Trash />} />
         </Switch>
