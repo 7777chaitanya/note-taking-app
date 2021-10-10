@@ -1,12 +1,19 @@
-import React from 'react';
+import { makeStyles } from "@material-ui/styles";
 
-
-const styles = () => {
-    return (
-        <div>
-            Notes
-        </div>
-    )
+const useStyles = makeStyles({
+root : {
+    display : "flex",
+    
+},
+notesList:{
+    flex : 3,
+    border : "1px solid black",
+    height : "99vh",
+    
+},
+editor:{
+    flex : 7
 }
+});
 
-export default styles
+export default useStyles;
