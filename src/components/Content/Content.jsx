@@ -16,6 +16,8 @@ const Content = () => {
           <Route path="/home" render={(props) => <Home />} />
 
           <Route path="/notes/:roomId" render={(props) => <Notes {...props}/>} />
+          <Route path="/notes/" render={(props) => <Notes />} />
+
           <Route path="/tags" render={(props) => <Tags />} />
           <Route path="/trash" render={(props) => <Trash />} />
         </Switch>
