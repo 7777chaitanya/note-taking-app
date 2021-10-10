@@ -2,9 +2,9 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
     rightBox:{
-        flex : 6,
+        flex : 7,
         border : "1px solid black",
-        height : "99vh"
+        height : "99vh",
     }
 });
 
