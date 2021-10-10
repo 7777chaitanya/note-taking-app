@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Notes = () => {
+const Tags = () => {
     return (
         <div>
-           Notes 
+            Tags
         </div>
     )
 }
 
-export default Notes
+export default Tags

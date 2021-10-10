@@ -11,6 +11,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import NoteIcon from '@material-ui/icons/Note';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import {Link} from "react-router-dom";
 
 
 const MenuList = () => {
@@ -18,25 +19,25 @@ const MenuList = () => {
     return (
         <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
-        <ListItem button>
+        <ListItem button component={Link} to="/">
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/notes">
           <ListItemIcon>
             <NoteIcon />
           </ListItemIcon>
           <ListItemText primary="Notes" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/trash">
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
           <ListItemText primary="Trash" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/tags">
           <ListItemIcon>
             <LocalOfferIcon />
           </ListItemIcon>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Notes = () => {
+const Trash = () => {
     return (
         <div>
-           Notes 
+            trash
         </div>
     )
 }
 
-export default Notes
+export default Trash
