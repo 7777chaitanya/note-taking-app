@@ -3,10 +3,22 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { NotesContext } from "../../../contexts/NotesContext";
 import changeNoteDocContent from "../../../firebaseFunctions/changeNoteDocContent";
+import useStyles from "./styles";
+import {
+  Box,
+  Typography,
+  TextField,
+  InputBase,
+  IconButton,
+} from "@material-ui/core";
+import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const TextEditor = ({ roomId }) => {
   const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
   const { notes } = useContext(NotesContext);
+  const classes = useStyles();
 
   //   console.log("room Id in editor ",roomId);
 
@@ -17,12 +29,35 @@ const TextEditor = ({ roomId }) => {
     // this.setText(e.target.value)
   };
 
+  const handleTitleChange = (e) => {
+    console.log(e.target.value);
+    setTitle(e.target.value);
+    changeNoteDocTitle(e.target.value, roomId);
+  };
+
   useEffect(() => {
-     const note =  notes.find(note => note.id === roomId)
+    const note = notes.find((note) => note.id === roomId);
+    setTitle(note?.title);
     setText(note?.content);
   }, [roomId]);
 
-  return <ReactQuill value={text} onChange={handleChange} />;
+  return (
+    <Box className={classes.editorContainer}>
+      <Box className={classes.noteTitleInputBox}>
+        <InputBase
+          id="standard-basic"
+          value={title}
+          className={classes.noteTitleInput}
+          color="primary"
+          onChange={handleTitleChange}
+        />
+        <IconButton>
+          <DeleteIcon color="primary" className={classes.noteDeleteIcon}/>
+        </IconButton>
+      </Box>
+      <ReactQuill value={text} onChange={handleChange} />
+    </Box>
+  );
 };
 
 export default TextEditor;
