@@ -13,9 +13,10 @@ const Content = () => {
     <div className={classes.rightBox}>
       <Router>
         <Switch>
-          <Route path="/home" render={(props) => <Home />} />
+          
 
           <Route path="/notes/:roomId" render={(props) => <Notes {...props}/>} />
+          <Route path="/" render={(props) => <Home />} />
           <Route path="/notes/" render={(props) => <Notes />} />
 
           <Route path="/tags" render={(props) => <Tags />} />
