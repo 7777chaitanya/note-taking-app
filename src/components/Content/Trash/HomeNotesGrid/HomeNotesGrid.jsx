@@ -26,6 +26,13 @@ const HomeNotesGrid = () => {
  }
 
   return (
+    trashNotes?.length===0 ?
+      (<Paper className={classes.emptyTrash} elevation={11}>
+       <Typography variant="h5" color="secondary" align="center">
+        Your trash is empty! 
+        </Typography>
+        </Paper>) :
+
     <Grid container spacing={1}>
       {trashNotes.map((eachNote) => (
         <Grid

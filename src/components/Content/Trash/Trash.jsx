@@ -5,6 +5,7 @@ import HomeNotesGrid from "./HomeNotesGrid/HomeNotesGrid";
 
 const Home = () => {
     const classes = useStyles();
+
   return (
     <div>
       <Box className={classes.homeHeader}>

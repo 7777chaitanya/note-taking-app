@@ -20,6 +20,11 @@ const useStyles = makeStyles({
         display : "flex",
         justifyContent : "space-evenly",
         alignItems : "center"
+    },
+    emptyTrash:{
+        maxWidth  : "40vw",
+        padding : "2rem",
+        margin : "auto"
     }
 });
 
