@@ -7,5 +7,6 @@ export default async function changeNoteDocContent(value, roomId) {
   // Set the "capital" field of the city 'DC'
   await updateDoc(docRef, {
     content: value,
+    modifiedTime : new Date()
   });
 }
