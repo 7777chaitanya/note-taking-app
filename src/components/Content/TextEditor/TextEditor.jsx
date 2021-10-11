@@ -4,6 +4,8 @@ import "react-quill/dist/quill.snow.css";
 import { NotesContext } from "../../../contexts/NotesContext";
 import changeNoteDocContent from "../../../firebaseFunctions/changeNoteDocContent";
 import deleteNoteFromFirestore from "../../../firebaseFunctions/deleteNoteFromFirestore";
+import addToTrashCollection from "../../../firebaseFunctions/addToTrashCollection";
+
 import useStyles from "./styles";
 import {
   Box,
@@ -38,8 +40,11 @@ const TextEditor = ({ roomId }) => {
     changeNoteDocTitle(e.target.value, roomId);
   };
 
-  const handleDelete = async () => {
-    await deleteNoteFromFirestore(roomId);
+  const handleDelete =  () => {
+    const noteToDelete = notes?.find(note => note.id===roomId);
+    addToTrashCollection(roomId,{...noteToDelete});
+    //  deleteNoteFromFirestore(roomId);
+
     // if (notes.length > 1) {
     //   history.push(`/notes/${notes[1].id}`);
     // }
