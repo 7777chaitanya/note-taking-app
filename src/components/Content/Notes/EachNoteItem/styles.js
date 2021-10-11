@@ -7,7 +7,9 @@ root : {
     "&:hover": {
         cursor : "pointer",
         backgroundColor: 'rgb(7, 177, 77, 0.42)'
-      }
+      },
+      maxWidth : "13rem",
+      overFlowX : "scroll"
 }
 });
 

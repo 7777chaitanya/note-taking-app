@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { NotesContext } from "../../../contexts/NotesContext";
 import changeNoteDocContent from "../../../firebaseFunctions/changeNoteDocContent";
+import deleteNoteFromFirestore from "../../../firebaseFunctions/deleteNoteFromFirestore";
 import useStyles from "./styles";
 import {
   Box,
@@ -13,12 +14,14 @@ import {
 } from "@material-ui/core";
 import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { useHistory } from "react-router-dom";
 
 const TextEditor = ({ roomId }) => {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const { notes } = useContext(NotesContext);
   const classes = useStyles();
+  const history = useHistory();
 
   //   console.log("room Id in editor ",roomId);
 
@@ -34,6 +37,25 @@ const TextEditor = ({ roomId }) => {
     setTitle(e.target.value);
     changeNoteDocTitle(e.target.value, roomId);
   };
+
+  const handleDelete = async () => {
+    await deleteNoteFromFirestore(roomId);
+    // if (notes.length > 1) {
+    //   history.push(`/notes/${notes[1].id}`);
+    // }
+    // if(notes.length===1){
+    //   history.push("/home")
+    // }
+  };
+
+  useEffect(() => {
+    if(notes.length>1){
+    history.push(`/notes/${notes[0].id}`);
+    }
+    if(notes.length===0){
+      // history.push("/home");
+    }
+  }, [notes.length])
 
   useEffect(() => {
     const note = notes.find((note) => note.id === roomId);
@@ -51,8 +73,8 @@ const TextEditor = ({ roomId }) => {
           color="primary"
           onChange={handleTitleChange}
         />
-        <IconButton>
-          <DeleteIcon color="primary" className={classes.noteDeleteIcon}/>
+        <IconButton onClick={handleDelete}>
+          <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
       </Box>
       <ReactQuill value={text} onChange={handleChange} />
