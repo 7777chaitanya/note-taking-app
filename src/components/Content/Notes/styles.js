@@ -13,6 +13,10 @@ notesList:{
 },
 editor:{
     flex : 7
+},
+notesListBox:{
+    overflowY : "auto",
+    maxHeight : "90vh"
 }
 });
 
