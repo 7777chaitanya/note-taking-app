@@ -12,16 +12,18 @@ import { useHistory } from "react-router-dom";
 import { TrashNotesContext } from "../../../../contexts/TrashNotesContext";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import RestoreIcon from "@material-ui/icons/Restore";
+import deleteFromTrash from "../../../../firebaseFunctions/deleteFromTrash";
+import restoreFromTrash from "../../../../firebaseFunctions/restoreFromTrash";
 
 const HomeNotesGrid = () => {
   const classes = useStyles();
   const { trashNotes } = useContext(TrashNotesContext);
   const history = useHistory();
 
-  const handleNotePaperClick = (eachNote) => {
-    console.log("eachnnnnote=>", eachNote.id);
-    history.push(`/notes/${eachNote.id}`);
-  };
+ const handleRestoreFromTrash = (id) => {
+   const noteToRestore = trashNotes.find(note => note.id === id)
+  restoreFromTrash(id,{...noteToRestore});
+ }
 
   return (
     <Grid container spacing={1}>
@@ -31,7 +33,7 @@ const HomeNotesGrid = () => {
           xs={12}
           sm={6}
           md={4}
-          onClick={() => handleNotePaperClick(eachNote)}
+          // onClick={() => handleNotePaperClick(eachNote)}
         >
           <Paper className={classes.eachNotePaper} elevation={5}>
             <Typography color="primary" variant="h6" align="center">
@@ -40,10 +42,10 @@ const HomeNotesGrid = () => {
             <Box className={classes.contentBox}>{eachNote.content}</Box>
             <Divider />
             <Box className={classes.footerBox}>
-              <IconButton>
+              <IconButton onClick={() => deleteFromTrash(eachNote.id)}>
                 <DeleteForeverIcon />
               </IconButton>
-              <IconButton>
+              <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)}>
                 <RestoreIcon />
               </IconButton>
             </Box>
