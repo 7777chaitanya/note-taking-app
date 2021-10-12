@@ -6,6 +6,7 @@ import Home from "./Home/Home";
 import Notes from "./Notes/Notes";
 import Tags from "./Tags/Tags";
 import Trash from "./Trash/Trash";
+import CheckList from "./CheckList/CheckList";
 
 const Content = () => {
   const classes = useStyles();
@@ -13,15 +14,17 @@ const Content = () => {
     <div className={classes.rightBox}>
       <Router>
         <Switch>
-          
-
-          <Route path="/notes/:roomId" render={(props) => <Notes {...props}/>} />
+          <Route
+            path="/notes/:roomId"
+            render={(props) => <Notes {...props} />}
+          />
           <Route path="/notes/" render={(props) => <Notes />} />
 
           <Route path="/tags" render={(props) => <Tags />} />
           <Route path="/trash" render={(props) => <Trash />} />
-          <Route path="/" render={(props) => <Home />} />
+          <Route path="/checklist" render={(props) => <CheckList />} />
 
+          <Route path="/" render={(props) => <Home />} />
         </Switch>
       </Router>
     </div>

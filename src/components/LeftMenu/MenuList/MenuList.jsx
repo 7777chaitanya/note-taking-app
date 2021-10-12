@@ -12,7 +12,7 @@ import NoteIcon from '@material-ui/icons/Note';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import {Link} from "react-router-dom";
-
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 
 const MenuList = () => {
     const classes = useStyles();
@@ -42,6 +42,13 @@ const MenuList = () => {
             <LocalOfferIcon />
           </ListItemIcon>
           <ListItemText primary="Tags" />
+        </ListItem>
+
+        <ListItem button component={Link} to="/checklist">
+          <ListItemIcon>
+            <AssignmentTurnedInIcon />
+          </ListItemIcon>
+          <ListItemText primary="Checklist" />
         </ListItem>
       </List>
       <Divider />
