@@ -21,7 +21,7 @@ history.push(`/notes/${eachNote.id}`);
         <Grid item xs={12} sm={6} md={4} onClick={()=>handleNotePaperClick(eachNote)}>
           <Paper className={classes.eachNotePaper} elevation={5}>
               <Typography color="primary" variant="h6" align="center">{eachNote.title}</Typography>
-              {eachNote.content}
+              <p dangerouslySetInnerHTML={{__html: eachNote.content}} />
             </Paper>
         </Grid>
       ))}

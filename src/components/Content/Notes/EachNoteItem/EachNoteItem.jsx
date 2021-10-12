@@ -33,7 +33,7 @@ const EachNoteItem = ({noteItem}) => {
     return (
        <Paper elevation={5} className={classes.root} onClick={handleClick}>
            <Typography variant="h5">{noteItem.title}</Typography>
-           <Typography variant="body2">{parseHtmlString(noteItem.content)}</Typography>
+           <Typography variant="body2" dangerouslySetInnerHTML={{__html: noteItem.content}} />
 
            {/* <Typography variant="body2">{noteItem.content}</Typography> */}
            <Typography variant="p">{moment(noteItem?.creationTime?.toDate()).fromNow()}</Typography>
