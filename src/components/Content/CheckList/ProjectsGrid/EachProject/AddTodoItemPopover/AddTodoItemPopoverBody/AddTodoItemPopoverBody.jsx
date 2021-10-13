@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Typography, Paper, TextField, Button } from "@material-ui/core";
 import useStyles from "./styles";
-import addNewProject from "../../../../../firebaseFunctions/addNewProject";
+import addItemToTodoList from "../../../../../../../firebaseFunctions/addItemToTodoList";
 
-const AddProjectPopOverBody = ({ handleClose }) => {
+const AddProjectPopOverBody = ({ handleClose, eachProject }) => {
   const classes = useStyles();
   const projectNameRef = useRef(null);
 
@@ -15,7 +15,8 @@ const AddProjectPopOverBody = ({ handleClose }) => {
 
   const handleCreateNewProject = (e) => {
     e.preventDefault()
-    addNewProject(projectName);
+    // addNewProject(projectName);
+    addItemToTodoList(eachProject.id, projectName)
     handleClose();
   };
 
@@ -26,7 +27,7 @@ const AddProjectPopOverBody = ({ handleClose }) => {
           {/* <Typography>The content of the Popover.hdfaflsk</Typography> */}
           <TextField
             id="outlined-basic"
-            label="Project name"
+            label="Task name"
             variant="outlined"
             inputRef={projectNameRef}
             onChange={handleChange}
@@ -40,7 +41,7 @@ const AddProjectPopOverBody = ({ handleClose }) => {
             onClick={handleCreateNewProject}
             type="submit"
           >
-            Create Project
+            Add Task
           </Button>
           <Button color="secondary" variant="contained">
             Cancel
