@@ -9,6 +9,11 @@ root : {
 divider:{
     margin : "0.5rem"
 },
+headerBox:{
+    display : "flex",
+    justifyContent : "space-evenly",
+    alignItems : "center"
+}
 });
 
 export default useStyles;

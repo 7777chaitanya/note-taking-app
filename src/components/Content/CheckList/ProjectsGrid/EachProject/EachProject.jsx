@@ -1,15 +1,28 @@
 import React from "react";
 import useStyles from "./styles";
-import { Paper, Divider , Typography} from "@material-ui/core";
+import { Paper, Divider, Typography, IconButton, Box, Tooltip } from "@material-ui/core";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
-const EachProject = ({eachProject}) => {
+import TodoItemsCheckList from "./TodoItemsCheckList/TodoItemsCheckList";
+
+const EachProject = ({ eachProject }) => {
   const classes = useStyles();
 
   return (
     <Paper elevation={6} className={classes.root}>
-      <Typography color="primary" variant="h5" align="center">{eachProject?.name}</Typography>
-    <Divider className={classes.divider} />
-    hello
+      <Box className={classes.headerBox}>
+        <Typography color="primary" variant="h5" align="center">
+          {eachProject?.name}
+          <Tooltip title="Add item">
+          <IconButton>
+            <AddCircleIcon />
+          </IconButton>
+          </Tooltip>
+        </Typography>
+      </Box>
+
+      <Divider className={classes.divider} />
+      <TodoItemsCheckList />
     </Paper>
   );
 };
