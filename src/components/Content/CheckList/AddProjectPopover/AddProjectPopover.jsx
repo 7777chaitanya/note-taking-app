@@ -23,7 +23,7 @@ const AddProjectPopover = ({anchorEl,handleClose}) => {
           horizontal: 'center',
         }}
       >
-          <AddProjectPopOverBody/>
+          <AddProjectPopOverBody handleClose={handleClose}/>
       </Popover>
     )
 }
