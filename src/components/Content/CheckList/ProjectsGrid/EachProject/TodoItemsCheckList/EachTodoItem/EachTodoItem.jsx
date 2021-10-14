@@ -11,14 +11,20 @@ import {
 import Checkbox from "@material-ui/core/Checkbox";
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
-import changeTodoItemStatusToTrue from "../../../../../../../firebaseFunctions/changeTodoItemStatusToTrue"
+import changeTodoItemStatusToTrue from "../../../../../../../firebaseFunctions/changeTodoItemStatusToTrue";
 
 const EachTodoItem = ({ eachItem, eachProject }) => {
   const [checked, setChecked] = React.useState(() => eachItem?.checked);
 
   const handleChange = (event) => {
-    changeTodoItemStatusToTrue(eachItem.name, eachProject.id, !checked, eachProject);
     setChecked(event.target.checked);
+
+    changeTodoItemStatusToTrue(
+      eachItem.name,
+      eachProject.id,
+      !checked,
+      eachProject
+    );
   };
 
   return (
