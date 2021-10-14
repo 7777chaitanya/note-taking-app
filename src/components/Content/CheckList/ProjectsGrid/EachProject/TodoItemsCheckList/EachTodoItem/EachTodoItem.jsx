@@ -12,6 +12,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
 import changeTodoItemStatusToTrue from "../../../../../../../firebaseFunctions/changeTodoItemStatusToTrue";
+import deleteTodoItemFromFirebase from "../../../../../../../firebaseFunctions/deleteTodoItemFromFirebase";
 
 const EachTodoItem = ({ eachItem, eachProject }) => {
   const [checked, setChecked] = React.useState(() => eachItem?.checked);
@@ -25,6 +26,10 @@ const EachTodoItem = ({ eachItem, eachProject }) => {
       !checked,
       eachProject
     );
+  };
+
+  const handleDeleteTodoItemFromFirebase = () => {
+    deleteTodoItemFromFirebase(eachItem.name, eachProject.id, eachProject);
   };
 
   return (
@@ -46,7 +51,11 @@ const EachTodoItem = ({ eachItem, eachProject }) => {
         // secondary={secondary ? 'Secondary text' : null}
       />
       <ListItemSecondaryAction>
-        <IconButton edge="end" aria-label="delete">
+        <IconButton
+          edge="end"
+          aria-label="delete"
+          onClick={handleDeleteTodoItemFromFirebase}
+        >
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>
