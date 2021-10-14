@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useContext, useState} from "react";
 import useStyles from "./styles";
 import { Paper, Divider, Typography, IconButton, Box, Tooltip } from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
@@ -6,10 +6,18 @@ import addItemToTodoList from "../../../../../firebaseFunctions/addItemToTodoLis
 
 import TodoItemsCheckList from "./TodoItemsCheckList/TodoItemsCheckList";
 import AddTodoItemPopover from "./AddTodoItemPopover/AddTodoItemPopover";
+import { ProjectsContext } from "../../../../../contexts/ProjectsContext";
 
 const EachProject = ({ eachProject }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(false);
+  const [recall, setRecall] = useState(true)
+
+  const {project} = useContext(ProjectsContext);
+
+  useEffect(() => {
+    setRecall(p=>!p);
+ }, [project])
 
   const handleClick = (event) => {
     setAnchorEl(true);
