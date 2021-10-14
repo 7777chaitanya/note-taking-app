@@ -5,8 +5,8 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
-import useStyles from "./styles";
 import SearchIcon from "@material-ui/icons/Search";
+import useStyles from "./styles";
 
 const SearchNoteField = () => {
   const classes = useStyles();
