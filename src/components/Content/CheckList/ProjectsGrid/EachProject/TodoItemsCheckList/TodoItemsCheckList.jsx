@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import useStyles from "./styles";
 import {
   ListItem,
@@ -12,11 +12,17 @@ import {
 
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { ProjectsContext } from '../../../../../../contexts/ProjectsContext';
 
-const TodoItemsCheckList = () => {
+const TodoItemsCheckList = ({eachProject}) => {
   const classes = useStyles();
+  //  )
+  console.log(eachProject);
+
   return (
     <List dense={true}>
+         {eachProject.todoItems.map(eachItem =>
+
       <ListItem>
         <ListItemAvatar>
           <Avatar>
@@ -24,7 +30,7 @@ const TodoItemsCheckList = () => {
           </Avatar>
         </ListItemAvatar>
         <ListItemText
-          primary="Single-line item"
+          primary={eachItem.name}
           // secondary={secondary ? 'Secondary text' : null}
         />
         <ListItemSecondaryAction>
@@ -32,8 +38,9 @@ const TodoItemsCheckList = () => {
             <DeleteIcon />
           </IconButton>
         </ListItemSecondaryAction>
-      </ListItem>
+      </ListItem>)}
     </List>
+  
   );
 };
 

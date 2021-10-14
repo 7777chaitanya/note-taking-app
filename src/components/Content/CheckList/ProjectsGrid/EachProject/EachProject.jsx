@@ -39,7 +39,7 @@ const EachProject = ({ eachProject }) => {
       </Box>
 
       <Divider className={classes.divider} />
-      <TodoItemsCheckList />
+      <TodoItemsCheckList eachProject={eachProject} />
 
       <AddTodoItemPopover anchorEl={anchorEl} handleClose={handleClose} eachProject={eachProject}/>
 
