@@ -7,11 +7,17 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import SearchIcon from "@material-ui/icons/Search";
 import useStyles from "./styles";
+import {Link} from 'react-router-dom';
+import {Box} from "@material-ui/core";
 
 const SearchNoteField = () => {
   const classes = useStyles();
   return (
-    <FormControl
+    <>
+    <Box component={Link} to="/">
+          <img src={`${process.env.PUBLIC_URL}/fingertips.png`} alt="logo" className={classes.navbarLogo} 
+            /></Box>
+    {/* <FormControl
       className={clsx(classes.margin, classes.textField)}
       variant="outlined"
     >
@@ -27,7 +33,8 @@ const SearchNoteField = () => {
         }
         labelWidth={100}
       />
-    </FormControl>
+    </FormControl> */}
+    </>
   );
 };
 
