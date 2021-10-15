@@ -25,6 +25,9 @@ const useStyles = makeStyles({
         maxWidth  : "40vw",
         padding : "2rem",
         margin : "auto"
+    },
+    divider:{
+        margin : "0.5rem"
     }
 });
 

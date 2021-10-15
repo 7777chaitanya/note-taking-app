@@ -20,19 +20,18 @@ const HomeNotesGrid = () => {
   const { trashNotes } = useContext(TrashNotesContext);
   const history = useHistory();
 
- const handleRestoreFromTrash = (id) => {
-   const noteToRestore = trashNotes.find(note => note.id === id)
-  restoreFromTrash(id,{...noteToRestore});
- }
+  const handleRestoreFromTrash = (id) => {
+    const noteToRestore = trashNotes.find((note) => note.id === id);
+    restoreFromTrash(id, { ...noteToRestore });
+  };
 
-  return (
-    trashNotes?.length===0 ?
-      (<Paper className={classes.emptyTrash} elevation={11}>
-       <Typography variant="h5" color="secondary" align="center">
-        Your trash is empty! 
-        </Typography>
-        </Paper>) :
-
+  return trashNotes?.length === 0 ? (
+    <Paper className={classes.emptyTrash} elevation={11}>
+      <Typography variant="h5" color="secondary" align="center">
+        Your trash is empty!
+      </Typography>
+    </Paper>
+  ) : (
     <Grid container spacing={1}>
       {trashNotes.map((eachNote) => (
         <Grid
@@ -46,8 +45,10 @@ const HomeNotesGrid = () => {
             <Typography color="primary" variant="h6" align="center">
               {eachNote.title}
             </Typography>
-            <Box className={classes.contentBox}>{eachNote.content}</Box>
-            <Divider />
+            <Divider className={classes.divider}/>
+
+            <Box className={classes.contentBox} dangerouslySetInnerHTML={{__html: eachNote.content}} />
+            <Divider  className={classes.divider}/>
             <Box className={classes.footerBox}>
               <IconButton onClick={() => deleteFromTrash(eachNote.id)}>
                 <DeleteForeverIcon />
