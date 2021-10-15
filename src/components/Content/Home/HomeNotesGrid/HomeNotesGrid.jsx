@@ -3,6 +3,7 @@ import React, {useContext} from "react";
 import { NotesContext } from "../../../../contexts/NotesContext";
 import useStyles from "./styles";
 import {useHistory} from "react-router-dom";
+import {Divider} from "@material-ui/core";
 
 const HomeNotesGrid = () => {
   const classes = useStyles();
@@ -21,6 +22,7 @@ history.push(`/notes/${eachNote.id}`);
         <Grid item xs={12} sm={6} md={4} onClick={()=>handleNotePaperClick(eachNote)}>
           <Paper className={classes.eachNotePaper} elevation={5}>
               <Typography color="primary" variant="h6" align="center">{eachNote.title}</Typography>
+              <Divider className={classes.divider}/>
               <p dangerouslySetInnerHTML={{__html: eachNote.content}} />
             </Paper>
         </Grid>

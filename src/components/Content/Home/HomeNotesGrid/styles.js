@@ -10,6 +10,9 @@ const useStyles = makeStyles({
             cursor : "pointer",
             backgroundColor: 'rgb(7, 177, 77, 0.42)'
           }
+    },
+    divider:{
+        margin : "0.5rem"
     }
 });
 
