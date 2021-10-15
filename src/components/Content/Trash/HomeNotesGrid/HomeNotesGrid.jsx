@@ -32,7 +32,7 @@ const HomeNotesGrid = () => {
       </Typography>
     </Paper>
   ) : (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} className={classes.homeNotesCardsGrid}>
       {trashNotes.map((eachNote) => (
         <Grid
           item

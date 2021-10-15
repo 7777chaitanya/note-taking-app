@@ -13,6 +13,11 @@ const useStyles = makeStyles({
     },
     divider:{
         margin : "0.5rem"
+    },
+    homeNotesCardsGrid:{
+        maxHeight : "81vh",
+        // border : "1px solid green",
+        overflowY : "scroll"
     }
 });
 

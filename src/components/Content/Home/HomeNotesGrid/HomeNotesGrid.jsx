@@ -17,7 +17,7 @@ history.push(`/notes/${eachNote.id}`);
 
   return (
 
-    <Grid container spacing={1}>
+    <Grid container spacing={1} className={classes.homeNotesCardsGrid}>
       {notes.map((eachNote) => (
         <Grid item xs={12} sm={6} md={4} onClick={()=>handleNotePaperClick(eachNote)}>
           <Paper className={classes.eachNotePaper} elevation={5}>
