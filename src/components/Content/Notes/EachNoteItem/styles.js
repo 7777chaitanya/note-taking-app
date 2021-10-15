@@ -10,6 +10,9 @@ root : {
       },
       maxWidth : "13rem",
       overFlowX : "scroll"
+},
+divider:{
+  margin : "0.5rem"
 }
 });
 
