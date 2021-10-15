@@ -1,7 +1,12 @@
 * {
-    margin : 0;
+  margin: 0;
 }
 
-/* .ql-editor .ql-blank{
-border : none
-} */
+.ql-editor {
+  min-height: 81vh !important;
+  max-height: 81vh;
+  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  overflow-x: scroll;
+    max-width : 60vw;
+}
