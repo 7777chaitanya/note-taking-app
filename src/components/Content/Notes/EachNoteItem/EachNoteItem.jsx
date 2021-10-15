@@ -1,45 +1,33 @@
-import React from 'react';
+import React from "react";
 import useStyles from "./styles";
-import {Paper, Typography, Divider} from "@material-ui/core";
+import { Paper, Typography, Divider } from "@material-ui/core";
 import moment from "moment";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
+const EachNoteItem = ({ noteItem }) => {
+  const classes = useStyles();
+  const history = useHistory();
+  const handleClick = () => {
+    console.log(noteItem.id);
+    history.push(`/notes/${noteItem.id}`);
+  };
 
-const EachNoteItem = ({noteItem}) => {
-    const classes = useStyles();
-    const history = useHistory();
-    const handleClick = () => {
-        console.log(noteItem.id);
-        history.push(`/notes/${noteItem.id}`)
-    }
+  return (
+    <Paper elevation={5} className={classes.root} onClick={handleClick}>
+      <Typography variant="h5" color="primary">
+        {noteItem.title}
+      </Typography>
+      <Divider className={classes.divider} />
+      <Typography
+        variant="body2"
+        dangerouslySetInnerHTML={{ __html: noteItem.content }}
+      />
 
-    const parseHtmlString = (value) =>{
-        // var doc = new DOMParser().parseFromString(value, "text/xml");
-        // console.log(doc.firstChild)
-        // return doc.firstChild.innerHTML;
-        // console.log(typeof(value));
-        // return "hi"
+      <Typography variant="p" color="secondary" align="right" display="block">
+        {moment(noteItem?.creationTime?.toDate()).fromNow()}
+      </Typography>
+    </Paper>
+  );
+};
 
-    //     var dom = document.createElement('div');
-	// dom.innerHTML = value;
-	// return dom;
-
-    var parser = new DOMParser();
-	var doc = parser.parseFromString(value, 'text/html');
-    console.log(doc.body)
-	return doc.body.innerHTML;
-    }
-
-    return (
-       <Paper elevation={5} className={classes.root} onClick={handleClick}>
-           <Typography variant="h5" color="primary">{noteItem.title}</Typography>
-           <Divider className={classes.divider} />
-           <Typography variant="body2" dangerouslySetInnerHTML={{__html: noteItem.content}} />
-
-           {/* <Typography variant="body2">{noteItem.content}</Typography> */}
-           <Typography variant="p" color="secondary" align="right" display="block">{moment(noteItem?.creationTime?.toDate()).fromNow()}</Typography>
-       </Paper>
-    )
-}
-
-export default EachNoteItem
+export default EachNoteItem;
