@@ -4,7 +4,12 @@ const useStyles = makeStyles({
   eachNotePaper: {
     padding: "1rem",
     minHeight: "30vh",
-    maxWidth: "15vw",
+    [theme.breakpoints.down('md')]: {
+      backgroundColor: theme.palette.secondary.main,
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: "15vw",
+    },
     margin: "auto",
     "&:hover": {
       cursor: "pointer",
