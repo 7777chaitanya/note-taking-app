@@ -7,6 +7,8 @@ import Notes from "./Notes/Notes";
 import Tags from "./Tags/Tags";
 import Trash from "./Trash/Trash";
 import CheckList from "./CheckList/CheckList";
+import ScratchPad from "./ScratchPad/ScratchPad";
+
 
 const Content = () => {
   const classes = useStyles();
@@ -23,6 +25,8 @@ const Content = () => {
           <Route path="/tags" render={(props) => <Tags />} />
           <Route path="/trash" render={(props) => <Trash />} />
           <Route path="/checklist" render={(props) => <CheckList />} />
+          <Route path="/scratchpad" render={(props) => <ScratchPad />} />
+
 
           <Route path="/" render={(props) => <Home />} />
         </Switch>
