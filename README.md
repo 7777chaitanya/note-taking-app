@@ -1,4 +1,4 @@
-# RGB - Video streaming application built using react & Youtube API 📺
+# Fingertips - Note-taking application built using React and Firebase 🖐🏻
 
 ## TECH STACK
   * React
@@ -6,23 +6,22 @@
   * Firebase firestore
 
 ## FUNCTIONALITIES
-  * Create & delete a playlist
-  * Like a video
-  * Save a video
-  * Share videos
+  * Create, Edit & Delete a Note
+  * Deleted notes are added to Trash
+  * Videos can be restored or deleted from Trash
+  * Project Todo list functionality
   * Optimistic UI with error handling
-  * Responsive design
-  * Add and remove videos from playlists
-  * Can search for any video
-  * Used youtube data search API
+  * ScratchPad functionality to add dummy notes
+  * Project todo list items can be checked and unchecked and the state is persistent
+  * Project todo list items or the whole project can be deleted
   
 ## UPCOMING FUNCTIONALITIES
   * Authentication
-  * lazy loading
-  * Comments
-  * Channel content
-  * Video streaming
-  * Video suggestions based on location & user interests
+  * Scribble
+  * Image store
+  * Markdown editor
+  * Notes graph
+  * More themes
   
  ### LIVE PROJECT URL
-  * https://rgbvideos.netlify.app/
+  * https://fingertipsnotes.netlify.app/
