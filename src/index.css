@@ -8,6 +8,12 @@
   /* overflow: hidden; */
   /* overflow-y: scroll; */
   overflow-x: scroll;
-    width : 60vw;
+  width : 60vw;
     
 }
+
+/* @media only screen and (max-width: 600) {
+  .ql-editor {
+    width : 100vw;
+  }
+} */
