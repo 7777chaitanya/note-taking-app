@@ -4,7 +4,7 @@ const useStyles = makeStyles({
     noteTitleInput:{
        height : "3rem",
         fontSize : "2.5rem",
-        // color  :"green"
+        color  :"rgb(63,81,181)"
     },
     noteTitleInputBox:{
         // height : "3rem",
