@@ -8,7 +8,7 @@ const useStyles = makeStyles({
         margin : "auto",
         "&:hover": {
             cursor : "pointer",
-            backgroundColor: 'rgb(7, 177, 77, 0.42)'
+            backgroundColor: 'rgb(7, 177, 77, 0.50)'
           },
           display : "flex",
           flexDirection : "column"

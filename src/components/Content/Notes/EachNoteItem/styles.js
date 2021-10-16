@@ -6,7 +6,8 @@ root : {
     padding : "1rem",
     "&:hover": {
         cursor : "pointer",
-        backgroundColor: 'rgb(7, 177, 77, 0.42)'
+        backgroundColor: 'rgb(7, 177, 77,0.50)',
+        // backgroundColor : "rgb(220,220,220)"
       },
       maxWidth : "13rem",
       overFlowX : "scroll"
