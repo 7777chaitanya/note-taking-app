@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme) => ({
   },
   notesList: {
     flex: 3,
-    border: "1px solid black",
+    borderRight: "1px solid lightgray",
+
     height: "99vh",
   },
   editor: {
