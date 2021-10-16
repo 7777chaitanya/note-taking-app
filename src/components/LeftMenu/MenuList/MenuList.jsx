@@ -38,12 +38,13 @@ const MenuList = () => {
           </ListItemIcon>
           <ListItemText primary="Trash" />
         </ListItem>
-        <ListItem button component={Link} to="/tags">
+
+        {/* <ListItem button component={Link} to="/tags">
           <ListItemIcon>
             <LocalOfferIcon />
           </ListItemIcon>
           <ListItemText primary="Tags" />
-        </ListItem>
+        </ListItem> */}
 
         <ListItem button component={Link} to="/checklist">
           <ListItemIcon>
