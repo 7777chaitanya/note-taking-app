@@ -13,6 +13,9 @@ root : {
 },
 divider:{
   margin : "0.5rem"
+},
+eachNoteBox:{
+  overflowWrap : "break-word"
 }
 });
 

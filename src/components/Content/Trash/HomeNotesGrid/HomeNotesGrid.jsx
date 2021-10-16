@@ -42,6 +42,7 @@ const HomeNotesGrid = () => {
           // onClick={() => handleNotePaperClick(eachNote)}
         >
           <Paper className={classes.eachNotePaper} elevation={5}>
+            <Box>
             <Typography color="primary" variant="h6" align="center">
               {eachNote.title}
             </Typography>
@@ -56,6 +57,7 @@ const HomeNotesGrid = () => {
               <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)}>
                 <RestoreIcon />
               </IconButton>
+            </Box>
             </Box>
           </Paper>
         </Grid>
