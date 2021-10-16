@@ -1,11 +1,11 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
   eachNotePaper: {
     padding: "1rem",
     minHeight: "30vh",
     [theme.breakpoints.down('md')]: {
-      backgroundColor: theme.palette.secondary.main,
+      maxWidth : "15rem"
     },
     [theme.breakpoints.up('md')]: {
       maxWidth: "15vw",
@@ -27,6 +27,6 @@ const useStyles = makeStyles({
   eachNoteBox: {
     overflowWrap : "break-word"
   },
-});
+}));
 
 export default useStyles;

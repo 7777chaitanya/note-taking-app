@@ -38,16 +38,22 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "rem",
   },
   textAreaBox: {
-    //  marginTop : "8rem"
+    // width : "100%"
   },
   outerPaper: {
-    maxWidth: "60vw",
+
     minHeight: "80vh",
     margin: "auto",
     // backgroundColor : 'lightgray',
     paddingTop: "2rem",
     paddingLeft: "1rem",
     paddingRight: "1rem",
+    [theme.breakpoints.down('md')]: {
+maxWidth : "50rem"
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: "60vw",
+    },
   },
 }));
 
