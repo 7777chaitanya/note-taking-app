@@ -3,6 +3,7 @@ import useStyles from "./styles";
 import { Paper, Typography, Divider, Box } from "@material-ui/core";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
+import truncate from "../../../../utils/truncate";
 
 const EachNoteItem = ({ noteItem }) => {
   const classes = useStyles();
@@ -21,7 +22,7 @@ const EachNoteItem = ({ noteItem }) => {
         <Divider className={classes.divider} />
         <Typography
           variant="body2"
-          dangerouslySetInnerHTML={{ __html: noteItem.content }}
+          dangerouslySetInnerHTML={{ __html: truncate(noteItem.content) }}
         />
 
         <Typography variant="p" color="secondary" align="right" display="block">

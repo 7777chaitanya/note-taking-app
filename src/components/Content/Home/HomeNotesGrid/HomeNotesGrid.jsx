@@ -4,6 +4,7 @@ import { NotesContext } from "../../../../contexts/NotesContext";
 import useStyles from "./styles";
 import { useHistory } from "react-router-dom";
 import { Divider } from "@material-ui/core";
+import truncate from "../../../../utils/truncate"
 
 const HomeNotesGrid = () => {
   const classes = useStyles();
@@ -31,7 +32,7 @@ const HomeNotesGrid = () => {
                 {eachNote.title}
               </Typography>
               <Divider className={classes.divider} />
-              <p dangerouslySetInnerHTML={{ __html: eachNote.content }} />
+              <p dangerouslySetInnerHTML={{ __html: truncate(eachNote.content) }} />
             </Box>
           </Paper>
         </Grid>

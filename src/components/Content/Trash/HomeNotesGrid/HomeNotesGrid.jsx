@@ -14,6 +14,7 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import RestoreIcon from "@material-ui/icons/Restore";
 import deleteFromTrash from "../../../../firebaseFunctions/deleteFromTrash";
 import restoreFromTrash from "../../../../firebaseFunctions/restoreFromTrash";
+import truncate from "../../../../utils/truncate";
 
 const HomeNotesGrid = () => {
   const classes = useStyles();
@@ -48,7 +49,7 @@ const HomeNotesGrid = () => {
             </Typography>
             <Divider className={classes.divider}/>
 
-            <Box className={classes.contentBox} dangerouslySetInnerHTML={{__html: eachNote.content}} />
+            <Box className={classes.contentBox} dangerouslySetInnerHTML={{__html: truncate(eachNote.content)}} />
             <Divider  className={classes.divider}/>
             <Box className={classes.footerBox}>
               <IconButton onClick={() => deleteFromTrash(eachNote.id)}>
