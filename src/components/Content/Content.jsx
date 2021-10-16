@@ -8,30 +8,31 @@ import Tags from "./Tags/Tags";
 import Trash from "./Trash/Trash";
 import CheckList from "./CheckList/CheckList";
 import ScratchPad from "./ScratchPad/ScratchPad";
-
+import {Card} from "@material-ui/core";
 
 const Content = () => {
   const classes = useStyles();
   return (
-    <div className={classes.rightBox}>
+    <Card className={classes.rightBox}>
       <Router>
         <Switch>
-          <Route
-            path="/notes/:roomId"
-            render={(props) => <Notes {...props} />}
-          />
-          <Route path="/notes/" render={(props) => <Notes />} />
+          {/* <Card> */}
+            <Route
+              path="/notes/:roomId"
+              render={(props) => <Notes {...props} />}
+            />
+            <Route path="/notes/" render={(props) => <Notes />} />
 
-          <Route path="/tags" render={(props) => <Tags />} />
-          <Route path="/trash" render={(props) => <Trash />} />
-          <Route path="/checklist" render={(props) => <CheckList />} />
-          <Route path="/scratchpad" render={(props) => <ScratchPad />} />
+            <Route path="/tags" render={(props) => <Tags />} />
+            <Route path="/trash" render={(props) => <Trash />} />
+            <Route path="/checklist" render={(props) => <CheckList />} />
+            <Route path="/scratchpad" render={(props) => <ScratchPad />} />
 
-
-          <Route path="/" render={(props) => <Home />} />
+            <Route path="/" render={(props) => <Home />} />
+          {/* </Card> */}
         </Switch>
       </Router>
-    </div>
+    </Card>
   );
 };
 

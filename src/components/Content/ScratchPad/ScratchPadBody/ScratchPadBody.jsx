@@ -26,7 +26,7 @@ const ScratchPadBody = () => {
               className={classes.noteTitleInput}
               color="primary"
               multiline
-              maxRows={9}
+              maxRows={15}
               autoFocus
               onChange={handleScratchpadChange}
             />

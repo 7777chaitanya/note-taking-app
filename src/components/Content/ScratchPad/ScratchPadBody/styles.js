@@ -36,9 +36,11 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     //  paddingTop : "2rem",
     marginTop: "rem",
+    // minHeight : "60vh"
   },
   textAreaBox: {
     // width : "100%"
+    // minHeight : "60vh"
   },
   outerPaper: {
 
