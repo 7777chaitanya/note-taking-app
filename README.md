@@ -14,6 +14,7 @@
   * ScratchPad functionality to add dummy notes
   * Project todo list items can be checked and unchecked and the state is persistent
   * Project todo list items or the whole project can be deleted
+  * Dark mode
   
 ## UPCOMING FUNCTIONALITIES
   * Authentication
