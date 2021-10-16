@@ -5,8 +5,10 @@ const useStyles = makeStyles(theme=>({
         display : "flex",
         justifyContent : "center",
         alignItems : "center",
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             // backgroundColor: theme.palette.secondary.main,
+            minWidth : "70rem",
+            minHeight : "100vh"
           },
           [theme.breakpoints.up('sm')]: {
             overflowX : "hidden",
