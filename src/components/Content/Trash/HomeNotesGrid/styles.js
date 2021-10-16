@@ -1,10 +1,15 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
     eachNotePaper:{
         padding : "1rem",
         minHeight : "30vh",
-        maxWidth : "15vw",
+        [theme.breakpoints.down('md')]: {
+            maxWidth : '15rem'
+          },
+          [theme.breakpoints.up('md')]: {
+            maxWidth : "15vw",          },
+        
         margin : "auto",
         "&:hover": {
             cursor : "pointer",
@@ -34,7 +39,7 @@ const useStyles = makeStyles({
         // border : "1px solid green",
         overflowY : "scroll"
     }
-});
+}));
 
 export default useStyles;
 

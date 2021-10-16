@@ -10,10 +10,11 @@ const useStyles = makeStyles(theme=>({
             minWidth : "70rem",
             minHeight : "100vh"
           },
-          [theme.breakpoints.up('sm')]: {
-            overflowX : "hidden",
-            overflowY : "hidden"
+          [theme.breakpoints.up('md')]: {
+           
         },
+        overflowX : "hidden",
+        overflowY : "hidden"
     }
 }));
 

@@ -37,9 +37,9 @@ const HomeNotesGrid = () => {
       {trashNotes.map((eachNote) => (
         <Grid
           item
-          xs={12}
+          xs={6}
           sm={6}
-          md={4}
+          md={6}
           // onClick={() => handleNotePaperClick(eachNote)}
         >
           <Paper className={classes.eachNotePaper} elevation={5}>
