@@ -5,11 +5,11 @@ import SearchNoteField from "./SearchNoteField/SearchNoteField";
 import NewNoteButton from "./NewNoteButton/NewNoteButton"
 import MenuList from "./MenuList/MenuList";
 
-const LeftMenu = () => {
+const LeftMenu = ({darkMode, setDarkMode}) => {
   const classes = useStyles();
   return (
   <div className={classes.leftBox}>
-    <SearchNoteField/>
+    <SearchNoteField darkMode={darkMode} setDarkMode={setDarkMode} />
     <NewNoteButton/>
     <MenuList/>
   </div>);

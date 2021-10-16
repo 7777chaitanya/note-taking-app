@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
     height: "5rem",
     width: "5rem",
   },
+  outerBox:{
+    display : "flex",
+    flexDirection : 'column',
+    alignItems : "center",
+    justifyContent : 'center'
+  }
 }));
 
 export default useStyles;
