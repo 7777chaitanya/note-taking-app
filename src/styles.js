@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme=>({
             // backgroundColor: theme.palette.secondary.main,
           },
           [theme.breakpoints.up('sm')]: {
-            overflowX : "hidden"
+            overflowX : "hidden",
+            overflowY : "hidden"
         },
     }
 }));
