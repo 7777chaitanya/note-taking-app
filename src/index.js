@@ -5,6 +5,7 @@ import "./index.css";
 import { TrashNotesProvider } from "./contexts/TrashNotesContext";
 import { ProjectsProvider } from "./contexts/ProjectsContext";
 import { createTheme, ThemeProvider } from "@material-ui/core";
+import { ScratchPadProvider } from "./contexts/ScratchPadContext";
 
 const theme = createTheme({
   overrides: {
@@ -44,6 +45,7 @@ const theme = createTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <ScratchPadProvider>
     <NotesProvider>
       <TrashNotesProvider>
         <ProjectsProvider>
@@ -51,6 +53,7 @@ ReactDOM.render(
         </ProjectsProvider>
       </TrashNotesProvider>
     </NotesProvider>
+    </ScratchPadProvider>
   </ThemeProvider>,
   document.getElementById("root")
 );
