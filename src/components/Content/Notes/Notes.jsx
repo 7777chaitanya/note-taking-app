@@ -12,8 +12,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import SearchIcon from "@material-ui/icons/Search";
-import CancelIcon from '@material-ui/icons/Cancel';
-import {useHistory} from "react-router-dom";
+import CancelIcon from "@material-ui/icons/Cancel";
+import { useHistory } from "react-router-dom";
 
 const Notes = (props) => {
   const classes = useStyles();
@@ -22,12 +22,16 @@ const Notes = (props) => {
   console.log("notes => ", notes);
   const params = useParams();
   const [searchTerm, setSearchTerm] = useState("");
-  const notesToRender = notes.filter(note => note.title.toLowerCase().includes(searchTerm.toLowerCase()));
+  const notesToRender = notes.filter((note) =>
+    note.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   //   console.log("params => ",params.roomId)
 
   useEffect(() => {
     history.push(`/notes/${notesToRender[0]?.id}`);
   }, [searchTerm]);
+
+ 
 
   return (
     <div className={classes.root}>
@@ -50,25 +54,26 @@ const Notes = (props) => {
               id="outlined-adornment-password"
               endAdornment={
                 <InputAdornment position="end">
-                  {searchTerm ?
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    edge="end"
-                    onClick={()=>setSearchTerm("")}
-                  >
-                    <CancelIcon />
-                  </IconButton>
-                  :
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    edge="end"
-                  >
-                    <SearchIcon />
-                  </IconButton>}
+                  {searchTerm ? (
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      edge="end"
+                      onClick={() => setSearchTerm("")}
+                    >
+                      <CancelIcon />
+                    </IconButton>
+                  ) : (
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      edge="end"
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                  )}
                 </InputAdornment>
               }
               labelWidth={100}
-              onChange={(e)=> setSearchTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value)}
               value={searchTerm}
             />
           </FormControl>
@@ -78,7 +83,7 @@ const Notes = (props) => {
         <Box className={classes.notesListBox}>
           <List>
             {notesToRender.map((eachNote) => (
-              <ListItem onClick={()=>setSearchTerm("")}>
+              <ListItem onClick={() => setSearchTerm("")}>
                 <EachNoteItem noteItem={eachNote} />
               </ListItem>
             ))}

@@ -43,7 +43,7 @@ const AddProjectPopOverBody = ({ handleClose, eachProject }) => {
           >
             Add Task
           </Button>
-          <Button color="secondary" variant="contained">
+          <Button color="secondary" variant="contained" onClick={handleClose}>
             Cancel
           </Button>
         </Paper>
