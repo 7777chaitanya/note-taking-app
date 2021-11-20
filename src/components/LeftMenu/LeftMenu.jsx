@@ -6,11 +6,11 @@ import NewNoteButton from "./NewNoteButton/NewNoteButton"
 import MenuList from "./MenuList/MenuList";
 import {Card} from "@material-ui/core";
 
-const LeftMenu = ({darkMode, setDarkMode}) => {
+const LeftMenu = () => {
   const classes = useStyles();
   return (
   <Card className={classes.leftBox}>
-    <SearchNoteField darkMode={darkMode} setDarkMode={setDarkMode} />
+    <SearchNoteField />
     <NewNoteButton/>
     <MenuList/>
   </Card>);

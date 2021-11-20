@@ -6,11 +6,13 @@ import useStyles from "./styles";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import themeObject from "./themeObject.js";
+import { DarkModeContext } from './contexts/DarkModeContext';
 
 const App = () => {
   const classes = useStyles();
   const { notes } = useContext(NotesContext);
-  const [darkMode, setDarkMode] = useState(false);
+  const {darkMode, setDarkMode} = useContext(DarkModeContext);
+  // const [darkMode, setDarkMode] = useState(false);
   const theme = themeObject(darkMode);
 
   return (
@@ -19,7 +21,7 @@ const App = () => {
         <CssBaseline />
 
         <Box className={classes.outerBox}>
-          <LeftMenu darkMode={darkMode} setDarkMode={setDarkMode} />
+          <LeftMenu />
           <Content />
         </Box>
       </ThemeProvider>

@@ -6,13 +6,17 @@ import { TrashNotesProvider } from "./contexts/TrashNotesContext";
 import { ProjectsProvider } from "./contexts/ProjectsContext";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { ScratchPadProvider } from "./contexts/ScratchPadContext";
+import { DarkModeProvider } from "./contexts/DarkModeContext";
+
 
 ReactDOM.render(
   <ScratchPadProvider>
     <NotesProvider>
       <TrashNotesProvider>
         <ProjectsProvider>
+          <DarkModeProvider>
           <App />
+          </DarkModeProvider>
         </ProjectsProvider>
       </TrashNotesProvider>
     </NotesProvider>

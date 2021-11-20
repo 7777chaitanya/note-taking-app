@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 import { Box, Switch } from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { DarkModeContext } from "../../../contexts/DarkModeContext";
 
-const SearchNoteField = ({ darkMode, setDarkMode }) => {
+const SearchNoteField = () => {
   const classes = useStyles();
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const handleChange = () => {
     console.log("callllled");
