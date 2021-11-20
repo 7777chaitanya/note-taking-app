@@ -7,7 +7,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import React, { useContext } from "react";
-import useStyles from "./styles";
+import returnStyles from "./styles";
 import { useHistory } from "react-router-dom";
 import { TrashNotesContext } from "../../../../contexts/TrashNotesContext";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -15,10 +15,12 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import deleteFromTrash from "../../../../firebaseFunctions/deleteFromTrash";
 import restoreFromTrash from "../../../../firebaseFunctions/restoreFromTrash";
 import truncate from "../../../../utils/truncate";
+import { DarkModeContext } from '../../../../contexts/DarkModeContext';
 
 const HomeNotesGrid = () => {
-  const classes = useStyles();
   const { trashNotes } = useContext(TrashNotesContext);
+  const {darkMode} = useContext(DarkModeContext);
+  const classes = returnStyles(darkMode)();
   const history = useHistory();
 
   const handleRestoreFromTrash = (id) => {
