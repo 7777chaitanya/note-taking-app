@@ -1,12 +1,14 @@
-import React from "react";
-import useStyles from "./styles";
+import React, { useContext } from "react";
+import returnStyles from "./styles";
 import { Paper, Typography, Divider, Box } from "@material-ui/core";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import truncate from "../../../../utils/truncate";
+import { DarkModeContext } from "../../../../contexts/DarkModeContext";
 
 const EachNoteItem = ({ noteItem }) => {
-  const classes = useStyles();
+  const { darkMode } = useContext(DarkModeContext);
+  const classes = returnStyles(darkMode)();
   const history = useHistory();
   const handleClick = () => {
     console.log(noteItem.id);
