@@ -7,10 +7,8 @@ import { ProjectsProvider } from "./contexts/ProjectsContext";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import { ScratchPadProvider } from "./contexts/ScratchPadContext";
 
-
-
 ReactDOM.render(
-    <ScratchPadProvider>
+  <ScratchPadProvider>
     <NotesProvider>
       <TrashNotesProvider>
         <ProjectsProvider>
@@ -18,6 +16,6 @@ ReactDOM.render(
         </ProjectsProvider>
       </TrashNotesProvider>
     </NotesProvider>
-    </ScratchPadProvider>,
+  </ScratchPadProvider>,
   document.getElementById("root")
 );
