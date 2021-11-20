@@ -1,14 +1,16 @@
 import { Grid, Paper, Typography, Box } from "@material-ui/core";
 import React, { useContext } from "react";
 import { NotesContext } from "../../../../contexts/NotesContext";
-import useStyles from "./styles";
+import returnStyles from "./styles";
 import { useHistory } from "react-router-dom";
 import { Divider } from "@material-ui/core";
 import truncate from "../../../../utils/truncate"
+import { DarkModeContext } from "../../../../contexts/DarkModeContext";
 
 const HomeNotesGrid = () => {
-  const classes = useStyles();
   const { notes } = useContext(NotesContext);
+  const {darkMode} = useContext(DarkModeContext);
+  const classes = returnStyles(darkMode)();
   const history = useHistory();
 
   const handleNotePaperClick = (eachNote) => {
