@@ -52,10 +52,10 @@ const HomeNotesGrid = () => {
             <Box className={classes.contentBox} dangerouslySetInnerHTML={{__html: truncate(eachNote.content)}} />
             <Divider  className={classes.divider}/>
             <Box className={classes.footerBox}>
-              <IconButton onClick={() => deleteFromTrash(eachNote.id)}>
+              <IconButton onClick={() => deleteFromTrash(eachNote.id)} className={classes.permanentlyDeleteIcon}>
                 <DeleteForeverIcon />
               </IconButton>
-              <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)}>
+              <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)} className={classes.archiveTrashItemIcon}>
                 <RestoreIcon />
               </IconButton>
             </Box>
