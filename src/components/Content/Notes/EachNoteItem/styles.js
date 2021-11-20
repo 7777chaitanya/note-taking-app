@@ -7,7 +7,8 @@ const useStyles = makeStyles({
     "&:hover": {
       cursor: "pointer",
       backgroundColor: "rgb(7, 177, 77,0.50)",
-      // backgroundColor : "rgb(220,220,220)"
+      // backgroundColor : "rgb(220,220,220)",
+      backgroundColor: "#95867c",
     },
     maxWidth: "13rem",
     overFlowX: "scroll",

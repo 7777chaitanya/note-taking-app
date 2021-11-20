@@ -13,7 +13,9 @@ const useStyles = makeStyles(theme=>({
         margin : "auto",
         "&:hover": {
             cursor : "pointer",
-            backgroundColor: 'rgb(7, 177, 77, 0.50)'
+            // backgroundColor: 'rgb(7, 177, 77, 0.50)',
+            backgroundColor: "#95867c",
+
           },
           display : "flex",
           flexDirection : "column"

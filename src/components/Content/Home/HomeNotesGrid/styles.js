@@ -1,19 +1,20 @@
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(theme=>({
+const useStyles = makeStyles((theme) => ({
   eachNotePaper: {
     padding: "1rem",
     minHeight: "30vh",
-    [theme.breakpoints.down('md')]: {
-      maxWidth : "15rem"
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "15rem",
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       maxWidth: "15vw",
     },
     margin: "auto",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: "rgb(7, 177, 77, 0.50)",
+      // backgroundColor: "rgb(7, 177, 77, 0.50)",
+      backgroundColor: "#95867c",
     },
   },
   divider: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles(theme=>({
     overflowY: "scroll",
   },
   eachNoteBox: {
-    overflowWrap : "break-word"
+    overflowWrap: "break-word",
   },
 }));
 
