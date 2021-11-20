@@ -82,7 +82,7 @@ const TextEditor = ({ roomId }) => {
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
       </Box>
-      <ReactQuill value={text} onChange={handleChange} theme="snow" />
+      <ReactQuill value={text} onChange={handleChange} />
     </Box>
   );
 };
