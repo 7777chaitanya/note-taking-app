@@ -5,7 +5,7 @@ import { NotesContext } from "../../../contexts/NotesContext";
 import changeNoteDocContent from "../../../firebaseFunctions/changeNoteDocContent";
 import deleteNoteFromFirestore from "../../../firebaseFunctions/deleteNoteFromFirestore";
 import addToTrashCollection from "../../../firebaseFunctions/addToTrashCollection";
-
+import "./styles.css";
 import useStyles from "./styles";
 import {
   Box,

@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
+    
     noteTitleInput:{
        height : "3rem",
         fontSize : "2.5rem",
@@ -17,7 +18,9 @@ const useStyles = makeStyles({
         "&:hover": {
             color: "red"
           }
-    }
+    },
+
+ 
 });
 
 export default useStyles;
