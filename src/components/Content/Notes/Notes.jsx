@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { NotesContext } from "../../../contexts/NotesContext";
 import TextEditor from "../TextEditor/TextEditor";
 import useStyles from "./styles";
-import { Box, Typography, List, ListItem, Divider } from "@material-ui/core";
+import { Box, Typography, List, ListItem, Divider, Card } from "@material-ui/core";
 import EachNoteItem from "./EachNoteItem/EachNoteItem";
 import { useParams } from "react-router-dom";
 import clsx from "clsx";
@@ -81,13 +81,19 @@ const Notes = (props) => {
         <Divider />
 
         <Box className={classes.notesListBox}>
-          <List>
+          {notesToRender.length !== 0 ?
+          (<List>
             {notesToRender.map((eachNote) => (
               <ListItem onClick={() => setSearchTerm("")}>
                 <EachNoteItem noteItem={eachNote} />
               </ListItem>
             ))}
-          </List>
+          </List>) :
+          (<Card className={classes.noNotes} elevation={3}>
+            <Typography variant="h5" align="center">
+              No Notes Found
+              </Typography>
+              </Card>)}
         </Box>
       </Box>
       <Box className={classes.editor}>
