@@ -84,6 +84,7 @@ const TextEditor = ({ roomId }) => {
           className={classes.noteTitleInput}
           color="primary"
           onChange={handleTitleChange}
+          placeholder="Title here..."
         />
         <IconButton onClick={handleDelete}>
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />

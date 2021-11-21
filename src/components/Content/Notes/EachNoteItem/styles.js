@@ -9,7 +9,8 @@ const returnStyles = (darkMode) => {
         cursor: "pointer",
         backgroundColor: "rgb(7, 177, 77,0.50)",
         // backgroundColor : "rgb(220,220,220)",
-        backgroundColor: darkMode ? "#95867c" : "rgb(7, 177, 77,0.50)",
+        backgroundColor: darkMode ? "#95867c" : "rgb(7, 177, 77,0.4)",
+
       },
       maxWidth: "13rem",
       overFlowX: "scroll",

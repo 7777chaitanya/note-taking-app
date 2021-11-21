@@ -17,7 +17,7 @@ const returnStyles = (darkMode) => {
       "&:hover": {
         cursor: "pointer",
         // backgroundColor: "rgb(7, 177, 77, 0.50)",
-        backgroundColor: darkMode ? "#95867c" : "rgb(7, 177, 77, 0.50)",
+        backgroundColor: darkMode ? "#95867c" : "rgb(7, 177, 77, 0.4)",
       },
     },
     divider: {

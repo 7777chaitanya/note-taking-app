@@ -9,7 +9,7 @@ const DarkModeEditor = ({ text, handleChange }) => {
     <ReactQuill
       value={text}
       onChange={handleChange}
-      placeholder="Start typing n darkmode..."
+      placeholder="Start typing..."
       key="2"
     />
   );
