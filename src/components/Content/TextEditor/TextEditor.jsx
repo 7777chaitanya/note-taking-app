@@ -5,7 +5,6 @@ import { NotesContext } from "../../../contexts/NotesContext";
 import changeNoteDocContent from "../../../firebaseFunctions/changeNoteDocContent";
 import deleteNoteFromFirestore from "../../../firebaseFunctions/deleteNoteFromFirestore";
 import addToTrashCollection from "../../../firebaseFunctions/addToTrashCollection";
-import "./styles.css";
 import useStyles from "./styles";
 import {
   Box,
@@ -17,11 +16,15 @@ import {
 import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useHistory } from "react-router-dom";
+import { DarkModeContext } from "../../../contexts/DarkModeContext";
+import DarkModeEditor from "./DarkModeEditor/DarkModeEditor";
+import LightModeEditor from "./LightModeEditor/LightModeEditor";
 
 const TextEditor = ({ roomId }) => {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const { notes } = useContext(NotesContext);
+  const { darkMode } = useContext(DarkModeContext);
   const classes = useStyles();
   const history = useHistory();
 
@@ -40,9 +43,9 @@ const TextEditor = ({ roomId }) => {
     changeNoteDocTitle(e.target.value, roomId);
   };
 
-  const handleDelete =  () => {
-    const noteToDelete = notes?.find(note => note.id===roomId);
-    addToTrashCollection(roomId,{...noteToDelete});
+  const handleDelete = () => {
+    const noteToDelete = notes?.find((note) => note.id === roomId);
+    addToTrashCollection(roomId, { ...noteToDelete });
     //  deleteNoteFromFirestore(roomId);
 
     // if (notes.length > 1) {
@@ -54,19 +57,23 @@ const TextEditor = ({ roomId }) => {
   };
 
   useEffect(() => {
-    if(notes.length>1){
-    history.push(`/notes/${notes[0].id}`);
+    if (notes.length > 1) {
+      history.push(`/notes/${notes[0].id}`);
     }
-    if(notes.length===0){
+    if (notes.length === 0) {
       // history.push("/home");
     }
-  }, [notes.length])
+  }, [notes.length]);
 
   useEffect(() => {
     const note = notes.find((note) => note.id === roomId);
     setTitle(note?.title);
     setText(note?.content);
   }, [roomId]);
+
+  useEffect(() => {
+    console.log(darkMode);
+  }, [darkMode]);
 
   return (
     <Box className={classes.editorContainer}>
@@ -82,7 +89,12 @@ const TextEditor = ({ roomId }) => {
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
       </Box>
-      <ReactQuill value={text} onChange={handleChange} />
+      {/* <ReactQuill value={text} onChange={handleChange} /> */}
+        {!darkMode ? (
+          <LightModeEditor text={text} handleChange={handleChange} />
+        ) : (
+          <DarkModeEditor text={text} handleChange={handleChange} />
+        )}
     </Box>
   );
 };

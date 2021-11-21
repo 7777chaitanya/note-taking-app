@@ -1,0 +1,15 @@
+.ql-toolbar.ql-snow {
+  /* background-color: lightblue; */
+}
+
+.ql-toolbar .ql-stroke {
+  stroke: #3f51b5;
+}
+
+.ql-toolbar .ql-fill {
+  fill: #3f51b5;
+}
+
+.ql-toolbar .ql-picker {
+  color: #3f51b5;
+}
