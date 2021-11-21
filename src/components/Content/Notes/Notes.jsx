@@ -89,11 +89,11 @@ const Notes = (props) => {
               </ListItem>
             ))}
           </List>) :
-          (<Card className={classes.noNotes} elevation={3}>
+          (<Box className={classes.noNotes} elevation={3} >
             <Typography variant="h5" align="center">
               No Notes Found
               </Typography>
-              </Card>)}
+              </Box>)}
         </Box>
       </Box>
       <Box className={classes.editor}>

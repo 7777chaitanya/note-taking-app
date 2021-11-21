@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     width: '25ch',
   },
+  noNotes:{
+    paddingTop : "1rem"
+  }
 }));
 
 export default useStyles;
