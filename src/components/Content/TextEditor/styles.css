@@ -1,5 +1,24 @@
 .ql-toolbar.ql-snow {
     color: green;
-    background-color: white;
+    background-color: gray;
     
+}
+
+.ql-toolbar .ql-stroke {
+    fill: none;
+    stroke: #fff;
+    /* fill : green; */
+    stroke : green;
+}
+
+.ql-toolbar .ql-fill {
+    fill: #fff;
+    stroke: none;
+    fill : green;
+    stroke : green;
+}
+
+.ql-toolbar .ql-picker {
+    color: #fff;
+    color : green;
 }
