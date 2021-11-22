@@ -16,6 +16,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { DarkModeContext } from "../../../contexts/DarkModeContext";
+import clsx from "clsx";
 
 const MenuList = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -34,7 +35,7 @@ const MenuList = () => {
           component={Link}
           to="/"
           onClick={() => handleActiveTab("home")}
-          className={currentTab === "home" && classes.active}
+          className={clsx(currentTab === "home" && classes.active, classes.hover)}
         >
           <ListItemIcon>
             <HomeIcon />
@@ -46,7 +47,7 @@ const MenuList = () => {
           component={Link}
           to="/notes"
           onClick={() => handleActiveTab("notes")}
-          className={currentTab === "notes" && classes.active}
+          className={clsx(currentTab === "notes" && classes.active, classes.hover)}
         >
           <ListItemIcon>
             <NoteIcon />
@@ -58,7 +59,7 @@ const MenuList = () => {
           component={Link}
           to="/trash"
           onClick={() => handleActiveTab("trash")}
-          className={currentTab === "trash" && classes.active}
+          className={clsx(currentTab === "trash" && classes.active, classes.hover)}
         >
           <ListItemIcon>
             <DeleteIcon />
@@ -78,7 +79,7 @@ const MenuList = () => {
           component={Link}
           to="/checklist"
           onClick={() => handleActiveTab("checklist")}
-          className={currentTab === "checklist" && classes.active}
+          className={clsx(currentTab === "checklist" && classes.active, classes.hover)}
         >
           <ListItemIcon>
             <AssignmentTurnedInIcon />
@@ -91,7 +92,7 @@ const MenuList = () => {
           component={Link}
           to="/scratchpad"
           onClick={() => handleActiveTab("scratchpad")}
-          className={currentTab === "scratchpad" && classes.active}
+          className={clsx(currentTab === "scratchpad" && classes.active, classes.hover)}
         >
           <ListItemIcon>
             <NotesIcon />
