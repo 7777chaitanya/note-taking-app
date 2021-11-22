@@ -32,8 +32,13 @@ const Notes = (props) => {
     note.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  console.log(params);
+
   useEffect(() => {
     history.push(`/notes/${notesToRender[0]?.id}`);
+    if (params.roomId) {
+      history.push(`/notes/${params.roomId}`);
+    }
   }, [searchTerm]);
 
   return (
