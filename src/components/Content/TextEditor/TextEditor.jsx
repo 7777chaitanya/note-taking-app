@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { NotesContext } from "../../../contexts/NotesContext";
@@ -20,6 +20,7 @@ import { useHistory } from "react-router-dom";
 import { DarkModeContext } from "../../../contexts/DarkModeContext";
 import DarkModeEditor from "./DarkModeEditor/DarkModeEditor";
 import LightModeEditor from "./LightModeEditor/LightModeEditor";
+import Snackbar from "./Snackbar/Snackbar";
 
 const TextEditor = ({ roomId }) => {
   const [text, setText] = useState("");
@@ -73,6 +74,8 @@ const TextEditor = ({ roomId }) => {
   //   console.log(darkMode);
   // }, [darkMode]);
 
+
+
   return (
     <Box className={classes.editorContainer}>
       <Box className={classes.noteTitleInputBox}>
@@ -91,12 +94,17 @@ const TextEditor = ({ roomId }) => {
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
       </Box>
+
+      <Snackbar />
+
       {/* <ReactQuill value={text} onChange={handleChange} /> */}
       {!darkMode ? (
         <LightModeEditor text={text} handleChange={handleChange} />
       ) : (
         <DarkModeEditor text={text} handleChange={handleChange} />
       )}
+
+
     </Box>
   );
 };
