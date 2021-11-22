@@ -6,15 +6,11 @@ import { ProjectsContext } from "../../../../../../contexts/ProjectsContext";
 
 const TodoItemsCheckList = ({ eachProject }) => {
   const classes = useStyles();
-  //  )
-  console.log(eachProject);
-
-  
 
   return (
     <List dense={true}>
       {eachProject.todoItems.map((eachItem) => (
-        <EachTodoItem eachItem={eachItem} eachProject={eachProject}/>
+        <EachTodoItem eachItem={eachItem} eachProject={eachProject} />
       ))}
     </List>
   );

@@ -11,7 +11,6 @@ const SearchNoteField = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   const handleChange = () => {
-    console.log("callllled");
     setDarkMode((darkMode) => !darkMode);
   };
 

@@ -12,7 +12,7 @@ import {
   TextField,
   InputBase,
   IconButton,
-  Button
+  Button,
 } from "@material-ui/core";
 import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -29,13 +29,10 @@ const TextEditor = ({ roomId }) => {
   const classes = useStyles();
   const history = useHistory();
 
-  //   console.log("room Id in editor ",roomId);
 
   const handleChange = (value) => {
-    console.log(value);
     setText(value);
     changeNoteDocContent(value, roomId);
-    // this.setText(e.target.value)
   };
 
   const handleTitleChange = (e) => {
@@ -72,9 +69,9 @@ const TextEditor = ({ roomId }) => {
     setText(note?.content);
   }, [roomId]);
 
-  useEffect(() => {
-    console.log(darkMode);
-  }, [darkMode]);
+  // useEffect(() => {
+  //   console.log(darkMode);
+  // }, [darkMode]);
 
   return (
     <Box className={classes.editorContainer}>
@@ -95,11 +92,11 @@ const TextEditor = ({ roomId }) => {
         </IconButton>
       </Box>
       {/* <ReactQuill value={text} onChange={handleChange} /> */}
-        {!darkMode ? (
-          <LightModeEditor text={text} handleChange={handleChange} />
-        ) : (
-          <DarkModeEditor text={text} handleChange={handleChange} />
-        )}
+      {!darkMode ? (
+        <LightModeEditor text={text} handleChange={handleChange} />
+      ) : (
+        <DarkModeEditor text={text} handleChange={handleChange} />
+      )}
     </Box>
   );
 };

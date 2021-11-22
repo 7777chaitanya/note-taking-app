@@ -11,7 +11,6 @@ const EachNoteItem = ({ noteItem }) => {
   const classes = returnStyles(darkMode)();
   const history = useHistory();
   const handleClick = () => {
-    console.log(noteItem.id);
     history.push(`/notes/${noteItem.id}`);
   };
 

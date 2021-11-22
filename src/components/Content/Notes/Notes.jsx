@@ -2,7 +2,14 @@ import { useContext, useState, useEffect } from "react";
 import { NotesContext } from "../../../contexts/NotesContext";
 import TextEditor from "../TextEditor/TextEditor";
 import useStyles from "./styles";
-import { Box, Typography, List, ListItem, Divider, Card } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  Divider,
+  Card,
+} from "@material-ui/core";
 import EachNoteItem from "./EachNoteItem/EachNoteItem";
 import { useParams } from "react-router-dom";
 import clsx from "clsx";
@@ -19,19 +26,15 @@ const Notes = (props) => {
   const classes = useStyles();
   const history = useHistory();
   const { notes } = useContext(NotesContext);
-  console.log("notes => ", notes);
   const params = useParams();
   const [searchTerm, setSearchTerm] = useState("");
   const notesToRender = notes.filter((note) =>
     note.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  //   console.log("params => ",params.roomId)
 
   useEffect(() => {
     history.push(`/notes/${notesToRender[0]?.id}`);
   }, [searchTerm]);
-
- 
 
   return (
     <div className={classes.root}>
@@ -81,19 +84,21 @@ const Notes = (props) => {
         <Divider />
 
         <Box className={classes.notesListBox}>
-          {notesToRender.length !== 0 ?
-          (<List>
-            {notesToRender.map((eachNote) => (
-              <ListItem onClick={() => setSearchTerm("")}>
-                <EachNoteItem noteItem={eachNote} />
-              </ListItem>
-            ))}
-          </List>) :
-          (<Box className={classes.noNotes} elevation={3} >
-            <Typography variant="h5" align="center">
-              No Notes Found
+          {notesToRender.length !== 0 ? (
+            <List>
+              {notesToRender.map((eachNote) => (
+                <ListItem onClick={() => setSearchTerm("")}>
+                  <EachNoteItem noteItem={eachNote} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+            <Box className={classes.noNotes} elevation={3}>
+              <Typography variant="h5" align="center">
+                No Notes Found
               </Typography>
-              </Box>)}
+            </Box>
+          )}
         </Box>
       </Box>
       <Box className={classes.editor}>
