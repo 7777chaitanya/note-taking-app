@@ -5,6 +5,7 @@ import {
   Box,
   Divider,
   IconButton,
+  Tooltip
 } from "@material-ui/core";
 import React, { useContext } from "react";
 import returnStyles from "./styles";
@@ -55,7 +56,9 @@ const HomeNotesGrid = () => {
             <Divider  className={classes.divider}/>
             <Box className={classes.footerBox}>
               <IconButton onClick={() => deleteFromTrash(eachNote.id)} className={classes.permanentlyDeleteIcon}>
+                <Tooltip title="Delete permanently">
                 <DeleteForeverIcon />
+                </Tooltip>
               </IconButton>
               <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)} className={classes.archiveTrashItemIcon}>
                 <RestoreIcon />
