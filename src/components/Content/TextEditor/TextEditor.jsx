@@ -12,6 +12,7 @@ import {
   TextField,
   InputBase,
   IconButton,
+  Button
 } from "@material-ui/core";
 import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -86,6 +87,9 @@ const TextEditor = ({ roomId }) => {
           onChange={handleTitleChange}
           placeholder="Title here..."
         />
+        <Button color="primary" variant="outlined">
+          Save
+        </Button>
         <IconButton onClick={handleDelete}>
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
