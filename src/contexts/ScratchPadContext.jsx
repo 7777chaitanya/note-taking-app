@@ -12,7 +12,6 @@ export const ScratchPadContext = createContext();
 
 export const ScratchPadProvider = ({ children }) => {
   const [scratchPad, setScratchPad] = useState("");
-  console.log("scratchPad =>", scratchPad);
 
   useEffect(() => {
     const q = query(collection(db, "scratchpad"));
