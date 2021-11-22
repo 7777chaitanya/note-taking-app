@@ -13,6 +13,8 @@ import {
   InputBase,
   IconButton,
   Button,
+  Slide,
+  Snackbar
 } from "@material-ui/core";
 import changeNoteDocTitle from "../../../firebaseFunctions/changeNoteDocTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -20,7 +22,8 @@ import { useHistory } from "react-router-dom";
 import { DarkModeContext } from "../../../contexts/DarkModeContext";
 import DarkModeEditor from "./DarkModeEditor/DarkModeEditor";
 import LightModeEditor from "./LightModeEditor/LightModeEditor";
-import Snackbar from "./Snackbar/Snackbar";
+
+
 
 const TextEditor = ({ roomId }) => {
   const [text, setText] = useState("");
@@ -29,6 +32,21 @@ const TextEditor = ({ roomId }) => {
   const { darkMode } = useContext(DarkModeContext);
   const classes = useStyles();
   const history = useHistory();
+  const [open, setOpen] = React.useState(false);
+  const [transition, setTransition] = React.useState(undefined);
+
+  function TransitionLeft(props) {
+    return <Slide {...props} direction="left" />;
+  }
+
+  const handleClick = (Transition) => {
+    setTransition(() => Transition);
+    setOpen(true);
+  };
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
 
 
   const handleChange = (value) => {
@@ -43,8 +61,11 @@ const TextEditor = ({ roomId }) => {
   };
 
   const handleDelete = () => {
+    handleClick(TransitionLeft);
+
     const noteToDelete = notes?.find((note) => note.id === roomId);
     addToTrashCollection(roomId, { ...noteToDelete });
+
     //  deleteNoteFromFirestore(roomId);
 
     // if (notes.length > 1) {
@@ -74,7 +95,7 @@ const TextEditor = ({ roomId }) => {
   //   console.log(darkMode);
   // }, [darkMode]);
 
-
+  
 
   return (
     <Box className={classes.editorContainer}>
@@ -90,12 +111,19 @@ const TextEditor = ({ roomId }) => {
         <Button color="primary" variant="outlined">
           Save
         </Button>
-        <IconButton onClick={handleDelete}>
+        <IconButton onClick={handleDelete} >
           <DeleteIcon color="primary" className={classes.noteDeleteIcon} />
         </IconButton>
       </Box>
 
-      <Snackbar />
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={transition}
+        message="Note Deleted!"
+        key={transition ? transition.name : ""}
+        autoHideDuration={1000}
+      />
 
       {/* <ReactQuill value={text} onChange={handleChange} /> */}
       {!darkMode ? (
