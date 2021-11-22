@@ -1,7 +1,5 @@
 import { makeStyles } from "@material-ui/core";
 
-
-
 const returnStyles = (darkMode) => {
   const useStyles = makeStyles((theme) => ({
     eachNotePaper: {
@@ -33,6 +31,6 @@ const returnStyles = (darkMode) => {
     },
   }));
   return useStyles;
-}
+};
 
 export default returnStyles;

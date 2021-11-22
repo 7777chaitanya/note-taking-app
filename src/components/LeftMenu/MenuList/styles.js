@@ -1,23 +1,21 @@
 import { makeStyles } from "@material-ui/core";
 
-
-
 const returnStyles = (darkMode) => {
   const useStyles = makeStyles((theme) => ({
     root: {
-      width: '100%',
+      width: "100%",
       maxWidth: 360,
       backgroundColor: theme.palette.background.paper,
     },
-    socialMediaLinks:{
-      textDecoration : "none", 
-      color  :"black"
+    socialMediaLinks: {
+      textDecoration: "none",
+      color: "black",
     },
-    active : {
+    active: {
       backgroundColor: darkMode ? "#95867c" : "rgb(7, 177, 77, 0.4)",
-    }
+    },
   }));
   return useStyles;
-}
+};
 
-export  default returnStyles;
+export default returnStyles;

@@ -1,5 +1,5 @@
 import returnStyles from "./styles";
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -15,10 +15,10 @@ import NotesIcon from "@material-ui/icons/Notes";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { DarkModeContext } from '../../../contexts/DarkModeContext';
+import { DarkModeContext } from "../../../contexts/DarkModeContext";
 
 const MenuList = () => {
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   const classes = returnStyles(darkMode)();
   const [currentTab, setCurrentTab] = useState("home");
 
@@ -29,26 +29,37 @@ const MenuList = () => {
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
-        <ListItem button component={Link} to="/" 
-        onClick={()=>handleActiveTab("home")}
-        className={currentTab === "home" && classes.active}
+        <ListItem
+          button
+          component={Link}
+          to="/"
+          onClick={() => handleActiveTab("home")}
+          className={currentTab === "home" && classes.active}
         >
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button component={Link} to="/notes"
-        onClick={()=>handleActiveTab("notes")}
-        className={currentTab === "notes" && classes.active}>
+        <ListItem
+          button
+          component={Link}
+          to="/notes"
+          onClick={() => handleActiveTab("notes")}
+          className={currentTab === "notes" && classes.active}
+        >
           <ListItemIcon>
             <NoteIcon />
           </ListItemIcon>
           <ListItemText primary="Notes" />
         </ListItem>
-        <ListItem button component={Link} to="/trash"
-        onClick={()=>handleActiveTab("trash")}
-        className={currentTab === "trash" && classes.active}>
+        <ListItem
+          button
+          component={Link}
+          to="/trash"
+          onClick={() => handleActiveTab("trash")}
+          className={currentTab === "trash" && classes.active}
+        >
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
@@ -62,18 +73,26 @@ const MenuList = () => {
           <ListItemText primary="Tags" />
         </ListItem> */}
 
-        <ListItem button component={Link} to="/checklist"
-        onClick={()=>handleActiveTab("checklist")}
-        className={currentTab === "checklist" && classes.active}>
+        <ListItem
+          button
+          component={Link}
+          to="/checklist"
+          onClick={() => handleActiveTab("checklist")}
+          className={currentTab === "checklist" && classes.active}
+        >
           <ListItemIcon>
             <AssignmentTurnedInIcon />
           </ListItemIcon>
           <ListItemText primary="Checklist" />
         </ListItem>
 
-        <ListItem button component={Link} to="/scratchpad"
-        onClick={()=>handleActiveTab("scratchpad")}
-        className={currentTab === "scratchpad" && classes.active}>
+        <ListItem
+          button
+          component={Link}
+          to="/scratchpad"
+          onClick={() => handleActiveTab("scratchpad")}
+          className={currentTab === "scratchpad" && classes.active}
+        >
           <ListItemIcon>
             <NotesIcon />
           </ListItemIcon>
