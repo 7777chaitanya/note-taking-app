@@ -5,7 +5,7 @@ import {
   Box,
   Divider,
   IconButton,
-  Tooltip
+  Tooltip,
 } from "@material-ui/core";
 import React, { useContext } from "react";
 import returnStyles from "./styles";
@@ -16,11 +16,11 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import deleteFromTrash from "../../../../firebaseFunctions/deleteFromTrash";
 import restoreFromTrash from "../../../../firebaseFunctions/restoreFromTrash";
 import truncate from "../../../../utils/truncate";
-import { DarkModeContext } from '../../../../contexts/DarkModeContext';
+import { DarkModeContext } from "../../../../contexts/DarkModeContext";
 
 const HomeNotesGrid = () => {
   const { trashNotes } = useContext(TrashNotesContext);
-  const {darkMode} = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   const classes = returnStyles(darkMode)();
   const history = useHistory();
 
@@ -47,23 +47,34 @@ const HomeNotesGrid = () => {
         >
           <Paper className={classes.eachNotePaper} elevation={5}>
             <Box>
-            <Typography color="primary" variant="h6" align="center">
-              {eachNote.title}
-            </Typography>
-            <Divider className={classes.divider}/>
+              <Typography color="primary" variant="h6" align="center">
+                {eachNote.title}
+              </Typography>
+              <Divider className={classes.divider} />
 
-            <Box className={classes.contentBox} dangerouslySetInnerHTML={{__html: truncate(eachNote.content)}} />
-            <Divider  className={classes.divider}/>
-            <Box className={classes.footerBox}>
-              <IconButton onClick={() => deleteFromTrash(eachNote.id)} className={classes.permanentlyDeleteIcon}>
-                <Tooltip title="Delete permanently">
-                <DeleteForeverIcon />
-                </Tooltip>
-              </IconButton>
-              <IconButton onClick={() => handleRestoreFromTrash(eachNote.id)} className={classes.archiveTrashItemIcon}>
-                <RestoreIcon />
-              </IconButton>
-            </Box>
+              <Box
+                className={classes.contentBox}
+                dangerouslySetInnerHTML={{ __html: truncate(eachNote.content) }}
+              />
+              <Divider className={classes.divider} />
+              <Box className={classes.footerBox}>
+                <IconButton
+                  onClick={() => deleteFromTrash(eachNote.id)}
+                  className={classes.permanentlyDeleteIcon}
+                >
+                  <Tooltip title="Delete permanently">
+                    <DeleteForeverIcon />
+                  </Tooltip>
+                </IconButton>
+                <IconButton
+                  onClick={() => handleRestoreFromTrash(eachNote.id)}
+                  className={classes.archiveTrashItemIcon}
+                >
+                  <Tooltip title="Restore">
+                    <RestoreIcon />
+                  </Tooltip>
+                </IconButton>
+              </Box>
             </Box>
           </Paper>
         </Grid>
