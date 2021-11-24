@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles({
     
     noteTitleInput:{
-       height : "3rem",
-        fontSize : "2.5rem",
-        color  :"rgb(63,81,181)"
+       height : "3rem!important",
+        fontSize : "2.5rem!important",
+        color  :"rgb(63,81,181)!important"
     },
     noteTitleInputBox:{
         // height : "3rem",
