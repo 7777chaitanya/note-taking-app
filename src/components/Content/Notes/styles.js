@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   margin: {
     margin: theme.spacing(1),
-    marginLeft : "auto",
-    marginRight : "auto"
+    marginLeft : "1.6rem",
+    // marginRight : "auto"
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
