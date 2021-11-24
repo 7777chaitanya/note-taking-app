@@ -22,10 +22,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   margin: {
-    margin: "theme.spacing(1)!important",
+    // margin: theme.spacing(1),
     // marginLeft : "1.6rem",
     marginLeft : "auto!important",
-    marginRight : "auto!important"
+    marginRight : "auto!important",
+    marginTop : "0.5rem!important",
+    marginBottom : "0.5rem!important",
+
   },
   withoutLabel: {
     marginTop: theme.spacing(3),
