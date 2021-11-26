@@ -1,8 +1,8 @@
-export default function truncate(input){
-if(input.length<50){
+export default function truncate(input, maxLength){
+if(input.length<maxLength){
     return input;
 }
 else{
-    return input.substring(0,50)+"...";
+    return input.substring(0,maxLength)+"...";
 }
 }

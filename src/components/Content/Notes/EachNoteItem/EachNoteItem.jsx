@@ -23,7 +23,7 @@ const EachNoteItem = ({ noteItem }) => {
         <Divider className={classes.divider} />
         <Typography
           variant="body2"
-          dangerouslySetInnerHTML={{ __html: truncate(noteItem.content) }}
+          dangerouslySetInnerHTML={{ __html: truncate(noteItem.content, 50) }}
         />
 
         <Typography variant="p" color="secondary" align="right" display="block">
